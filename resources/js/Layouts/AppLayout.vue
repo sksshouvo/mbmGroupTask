@@ -52,12 +52,23 @@ const logout = () => {
                                 <JetNavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
                                 </JetNavLink>
-                            </div>
-                            <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                                 <JetNavLink :href="route('role')" :active="route().current('role')">
                                     Role
                                 </JetNavLink>
+                                <JetNavLink :href="route('user')" :active="route().current('user')">
+                                    User
+                                </JetNavLink>
+                                <JetNavLink :href="route('item')" :active="route().current('item')">
+                                    Items
+                                </JetNavLink>
+                                <JetNavLink :href="route('received')" :active="route().current('received')">
+                                    Received
+                                </JetNavLink>
+                                <JetNavLink :href="route('requisition')" :active="route().current('requisition')">
+                                    Requisition
+                                </JetNavLink>
                             </div>
+
                         </div>
 
                         <div class="hidden sm:flex sm:items-center sm:ml-6">

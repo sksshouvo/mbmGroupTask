@@ -13,13 +13,14 @@ class CreateStockTable extends Migration
      */
     public function up()
     {
-        Schema::create('stock', function (Blueprint $table) {
+        Schema::create('stocks', function (Blueprint $table) {
             $table->id();
             $table->integer('tr_no')->nullable();
             $table->string('tr_type')->nullable();
             $table->integer('item_id')->nullable();
             $table->integer('supplier_id')->nullable();
-            $table->integer('qty')->default(0)->nullable();
+            $table->integer('in_qty')->default(0)->nullable();
+            $table->integer('out_qty')->default(0)->nullable();
             $table->decimal('price', 20,2)->default(0)->nullable();
             $table->enum('status', ['draft', 'approved', 'rejected'])->default('draft')->nullable();
             $table->timestamps();
@@ -33,6 +34,6 @@ class CreateStockTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('stock');
+        Schema::dropIfExists('stocks');
     }
 }

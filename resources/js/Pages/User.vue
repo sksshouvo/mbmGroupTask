@@ -1,10 +1,10 @@
 <template>
-    <AppLayout title="Role">
+    <AppLayout title="User">
         <template #header>
             <div class="flex flex-col">
             <div>
                 <h2 class="text-3xl font-bold underline">
-                    Role
+                    User
                 </h2>
             <br>
             </div>
@@ -12,16 +12,18 @@
                 <table class="shadow-lg bg-white border-separate">
                 <thead>
                     <tr>
-                        <th class="bg-blue-100 border text-left px-8 py-4">Role Name</th>
-                        <th class="bg-blue-100 border text-left px-8 py-4">Description</th>
+                        <th class="bg-blue-100 border text-left px-8 py-4">Name</th>
+                        <th class="bg-blue-100 border text-left px-8 py-4">Email</th>
+                        <th class="bg-blue-100 border text-left px-8 py-4">Role</th>
                         <th class="bg-blue-100 border text-left px-8 py-4">Created At</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="role in roles" :key="role.id">
-                        <td class="border px-8 py-4">{{role.display_name}}</td>
-                        <td class="border px-8 py-4">{{role.description}}</td>
-                        <td class="border px-8 py-4">{{role.created_at}}</td>
+                    <tr v-for="user in users.data" :key="user.id">
+                        <td class="border px-8 py-4">{{user.name}}</td>
+                        <td class="border px-8 py-4">{{user.email}}</td>
+                        <td class="border px-8 py-4">{{user.role}}</td>
+                        <td class="border px-8 py-4">{{user.created_at}}</td>
                     </tr>
                 </tbody>
             </table>
@@ -37,7 +39,7 @@ export default {
      AppLayout
     },
     props: {
-      roles: Object,
+      users: Object,
     },
 }
 </script>

@@ -31,6 +31,7 @@ class User extends Authenticatable
         'password',
     ];
 
+
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -50,6 +51,7 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'created_at' => 'datetime:Y-m-d h:i:s a',
     ];
 
     /**
@@ -60,4 +62,22 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function roleUser()
+    {
+        return $this->hasOne(RoleUser::class);
+    }
+
+    public function role()
+    {
+        
+        return $this->hasOneThrough(
+            Role::class,
+            RoleUser::class,
+            'role_id', // Foreign key on the role user table...
+            'id', // Foreign key on the role table...
+            'id', // Local key on the user table...
+            'user_id' // Local key on the role user table...
+        );
+    }
 }

@@ -16,7 +16,9 @@ return [
             'requisitions' => 'app,rej',
             'suppliers'   => 'c,r,u.d',
             'items'       => 'c,r,u.d',
-            'stock'       => 'r'
+            'stock'       => 'r',
+            'user'        => 'c,r,u.d',
+            'role'        => 'c,r,u.d'
         ],
         'employee' => [
             'requisitions'   => 'c,r,u.d',
