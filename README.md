@@ -17,6 +17,16 @@
 7. php artisan serve
 8. npm run watch
 
+## How to use this app
+
+Login With below Mentioned users
+1. Email: admin@test.com
+2. Password: 123456789
+3. Email: store-executive@test.com
+4. Password: 123456789
+5. Email: employee@test.com
+6. Password: 123456789
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
